@@ -13,7 +13,7 @@ def app(index_dir) -> None:
 
     # Konfiguriere den Titel der Web-App (wird im Browser-Tab angezeigt)
     set_page_config(
-        page_title="Speisen & Gerichte Suchmaschiene",
+        page_title="Speisen & Gerichte Suchmaschie",
         layout="centered",)
 
     # Gib der App einen Titel und eine Kurzbeschreibung:
