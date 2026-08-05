@@ -1,0 +1,15 @@
+# Neue Dokumente hinzufügen.
+
+Um neuen Dokumente hinzuzufügen gehe zu dem Terminal namens: "Document crawler" und gebe den code: "scrapy runspider sommercamp/crawler.py --output data/documents.jsonl" ein.
+
+Um den Downoad abzubrechen trücke: "Strg + Z"
+
+Um nun die neuen Dokumente zu deiner Suchmaschiene hinzuzufügen gebe bei dem Terminal namens: "Terminal" den code: "python sommercamp/indexer.py data/documents.jsonl data/index/" ein.
+
+------------------------------------------------------------------------------------------------
+
+# Öffne per Terminal die App.
+
+Um deine Suchmaschiene zu öffnen gehe zur Terminal namens: "Terminal" und gebe den code: "streamlit run sommercamp/app.py -- data/index/" ein.
+
+------------------------------------------------------------------------------------------------
