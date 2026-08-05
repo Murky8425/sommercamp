@@ -13,7 +13,7 @@ def app(index_dir) -> None:
 
     # Konfiguriere den Titel der Web-App (wird im Browser-Tab angezeigt)
     set_page_config(
-        page_title="Speisen & Gerichte",
+        page_title="Speisen & Gerichte Suchmaschiene",
         layout="centered",)
 
     # Gib der App einen Titel und eine Kurzbeschreibung:
@@ -57,7 +57,6 @@ def app(index_dir) -> None:
 
     # Wenn es Suchergebnisse gibt, dann zeige an, wie viele.
     markdown(f"{len(results)} Suchergebnisse.")
-
     # Gib nun der Reihe nach, alle Suchergebnisse aus.
     for _, row in results.iterrows():
         # Pro Suchergebnis, erstelle eine Box (container).
