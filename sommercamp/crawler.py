@@ -38,6 +38,8 @@ class SchoolSpider(Spider):
         # Frage nicht zwei mal die selbe Seite an.
         "HTTPCACHE_ENABLED": True,
     }
+    seen_urls = set()
+
 
     def parse(self, response):
         if not isinstance(response, HtmlResponse):
@@ -62,5 +64,7 @@ class SchoolSpider(Spider):
             if link.text == "":
                 # Ignoriere Links ohne Linktext, z.B. bei Bildern.
                 continue
-            # Für jeden gefundenen Link, stelle eine Anfrage zum Crawling.
-            yield Request(link.url, callback=self.parse)
+            if link not in self.seen_urls:
+                # Für jeden gefundenen Link, stelle eine Anfrage zum Crawling.
+                self.seen_urls.add(link)
+                yield Request(link.url, callback=self.parse)
