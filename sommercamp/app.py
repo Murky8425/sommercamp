@@ -7,7 +7,7 @@ from streamlit import (text_input, header, title, subheader,
 from pyterrier import IndexFactory
 from pyterrier.terrier import Retriever
 from pyterrier.text import get_text
-
+import streamlit as st
 
 # Diese Funktion baut die App für die Suche im gegebenen Index auf.
 def app(index_dir) -> None:
@@ -21,14 +21,25 @@ def app(index_dir) -> None:
     if "darkmode" not in session_state:
         session_state.darkmode = False
 
-    if button("🌙 Darkmode"):
-        session_state.darkmode = not session_state.darkmode
+    with st.container(horizontal=True, horizontal_alignment="right", vertical_alignment="center"):
+        with st.container():
+            # Gib der App einen Titel und eine Kurzbeschreibung:
+            title("Gerichte-Suchmaschine")
+            markdown("Hier kannst du unsere Gerichts-Suchmaschine nutzen:")
+
+        if session_state.darkmode:
+            button_text = "☀️ Lightmode"
+        else:
+            button_text = "🌙 Darkmode"
+
+        if button(button_text):
+            session_state.darkmode = not session_state.darkmode
+            st.rerun()
 
     # Darkmode Design
     if session_state.darkmode:
         markdown(
-            """
-            <style>
+            """<style>
             .stApp {
                 background-color: #595959;
                 # color: #FFFFFF;
@@ -80,14 +91,17 @@ def app(index_dir) -> None:
             }
 
 
-            </style>
-            """,
+            </style>""",
+            unsafe_allow_html=True
+        )
+    else:
+
+        markdown(
+            """<style>
+            </style>""",
             unsafe_allow_html=True
         )
     
-    # Gib der App einen Titel und eine Kurzbeschreibung:
-    title("Gerichte-Suchmaschine")
-    markdown("Hier kannst du unsere Gerichts-Suchmaschine nutzen:")
 
     # Erstelle ein Text-Feld, mit dem die Suchanfrage (query) 
     # eingegeben werden kann.
