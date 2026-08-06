@@ -30,33 +30,61 @@ def app(index_dir) -> None:
             """
             <style>
             .stApp {
-                background-color: #404040;
-                color: white;
+                background-color: #595959;
+                # color: #FFFFFF;
             }
 
             h1, h2, h3, p, label {
-                color: white !important;
+                background-color: #595959;
+                color: #FFFFFF !important;
             }
 
-            # Such Hintergrund Farbe
+            # Hintergrund Farbe
             input {
-                background-color: #A19595 !important;
-                color: white !important;
+                background-color: #000000 !important;
+                color: #000000 !important;
             }
 
             div[data-testid="stContainer"] {
-                background-color: #A19595;
+                background-color: #000000;
             }
 
+            # Darkmode Button
             button {
-                background-color: #C92A2A !important;
-                color: white !important;
+                background-color: #FFFFFF !important;
+                color: #00FF0F !important;
             }
+
+            div.stLinkButton a {
+            background-color: #595959 ;
+            }
+
+            div.stButton button {
+            background-color: #595959 ;
+            }
+        
+            hr {
+            border-color: #FFFFFF !important;
+            }
+
+            a {
+            border-color: #FFFFFF !important;
+            }
+
+            div.stVerticalBlock    {
+            border-color: #FFFFFF !important;
+            }
+
+            rl    {
+            background-color: #FFFFFF !important;
+            }
+
+
             </style>
             """,
             unsafe_allow_html=True
         )
-
+    
     # Gib der App einen Titel und eine Kurzbeschreibung:
     title("Gerichte-Suchmaschine")
     markdown("Hier kannst du unsere Gerichts-Suchmaschine nutzen:")
