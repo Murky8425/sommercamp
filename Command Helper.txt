@@ -8,10 +8,10 @@ Um Doppelte URL's Auszusortieren nutze im Terminal den code: "python3 sommercamp
 
 Um nun die neuen Dokumente zu deiner Suchmaschiene hinzuzufügen gebe bei dem Terminal den code: "python sommercamp/indexer.py data/documents.jsonl data/index/" ein.
 
-------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Öffne per Terminal die App.
 
 Um deine Suchmaschiene zu öffnen gehe zur Terminal namens: "streamlit run sommercamp/app.py -- data/index/" ein.
 
-------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
