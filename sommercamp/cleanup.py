@@ -3,6 +3,8 @@ from os.path import exists, abspath
 from sys import argv
 import json
 import os
+
+
 def cleanup(input_file, output_file) -> None:
     # Öffne den Index.
     input_path = abspath(input_file)
@@ -29,6 +31,7 @@ def cleanup(input_file, output_file) -> None:
 def main():
     input_file, output_file = argv[1], argv[2]
     cleanup(input_file, output_file)
+
 
 if __name__ == "__main__":
     main()
