@@ -40,7 +40,6 @@ class SchoolSpider(Spider):
     }
     seen_urls = set()
 
-
     def parse(self, response):
         if not isinstance(response, HtmlResponse):
             # Die Webseite ist keine HTML-Webseite, enthält also keinen Text.

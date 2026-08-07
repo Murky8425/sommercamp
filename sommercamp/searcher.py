@@ -49,5 +49,6 @@ def main():
     # Gib die Suchergebnisse im Terminal aus.
     print(results)
 
+
 if __name__ == "__main__":
     main()
