@@ -14,15 +14,17 @@ class SchoolSpider(Spider):
         # Gib hier mindestens eine (oder mehrere) URLs an,
         # bei denen der Crawler anfangen soll,
         # Seiten zu downloaden.
+        "https://www.einfachbacken.de/"
         "https://reisehappen.de/rezepte/",
         "https://volkermampft.de/kategorien/blog-events/die-kulinarische-weltreise/",
         "https://www.essen-und-trinken.de/internationale-kueche",
         "https://www.rewe.de/ernaehrung/internationale-kueche/"
-    ]
+        "https://www.lecker.de/"
+        ]
     link_extractor = LxmlLinkExtractor(
         # Beschränke den Crawler, nur Links zu verfolgen,
         # die auf eine der gelisteten Domains verweisen.
-        allow_domains=["reisehappen.de", "volkermampft.de", "www.essen-und-trinken.de", "www.rewe.de"],
+        allow_domains=["reisehappen.de", "volkermampft.de", "www.essen-und-trinken.de", "www.rewe.de", "www.lecker.de", "www.einfachbacken.de"],
     )
     custom_settings = {
         # Identifiziere den Crawler gegenüber den gecrawlten Seiten.
