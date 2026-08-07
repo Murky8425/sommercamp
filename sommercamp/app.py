@@ -126,8 +126,10 @@ def app(index_dir) -> None:
                 border-color: #FFFFFF !important;
             }
 
-            data-testid=stCode {
+            div.stCode pre {
+                color: #FFFFFF;
                 background: #595959 !important;
+                border: 1px solid #FFFFFF;
             }
 
             </style>
@@ -166,7 +168,8 @@ def app(index_dir) -> None:
 
         return
         # Öffne den Index.
-
+    print("Index-Pfad:", abspath(index_dir))
+    print("Existiert:", exists(index_dir))
     index = IndexFactory.of(
         abspath(index_dir)
     )
@@ -349,7 +352,7 @@ def app(index_dir) -> None:
     # Rechter Button für nächste Seite.
 
     with col3:
-        col2a, col2b =st.columns(
+        col2a, col2b = st.columns(
             [1.5, 1]
         )
         with col2b:
