@@ -2,7 +2,9 @@
 
 Um neuen Dokumente hinzuzufügen gehe zu dem Terminal und gebe den code: "scrapy runspider sommercamp/crawler.py --output data/documents.jsonl" ein.
 
-Um den Downoad abzubrechen trücke: "Strg + Z"
+Um den Downoad abzubrechen trücke: "Strg + C"
+
+Um Doppelte URL's Auszusortieren nutze im Terminal den code: "python3 sommercamp/cleanup.py data/documents.jsonl data/cleanedup.jsonl".
 
 Um nun die neuen Dokumente zu deiner Suchmaschiene hinzuzufügen gebe bei dem Terminal den code: "python sommercamp/indexer.py data/documents.jsonl data/index/" ein.
 
